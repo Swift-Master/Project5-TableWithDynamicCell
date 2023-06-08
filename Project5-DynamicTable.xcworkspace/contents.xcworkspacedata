@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "container:"
+      name = "Project5">
+      <FileRef
+         location = "group:Project5-TableWithDynamicCell/Project5-TableWithDynamicCell.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "Reference">
+      <FileRef
+         location = "group:Project 05 - Artistry/Artistry.xcodeproj">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:Project 05 - Artistry/Artistry.gif">
+   </FileRef>
+</Workspace>
