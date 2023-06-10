@@ -2,10 +2,15 @@
 import UIKit
 
 class ArtistListViewController: UIViewController {
-
+    
+    var artGallery : Gallery?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        getData()
+//        guard let artGallery = artGallery else {return}
+//        print(artGallery.artists![0])
     }
     
     func setUI() {
@@ -22,7 +27,10 @@ class ArtistListViewController: UIViewController {
         navigationController?.setNeedsStatusBarAppearanceUpdate()
         title = "Art Gallery"
     }
-
-
+    
+    func getData() {
+        artGallery = Gallery.getData()
+    }
+    
 }
 
