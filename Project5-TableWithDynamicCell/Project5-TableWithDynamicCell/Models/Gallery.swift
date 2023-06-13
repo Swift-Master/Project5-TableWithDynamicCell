@@ -2,7 +2,7 @@ import Foundation
 
 struct Gallery: Codable {
     
-    var artists : [Artists]?
+    var artists : [Artists?]
     
     static func getData() -> Gallery? {
         var artGallery : Gallery?
