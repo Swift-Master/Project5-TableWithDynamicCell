@@ -53,6 +53,17 @@ extension ArtistListViewController : UITableViewDataSource {
 }
 
 extension ArtistListViewController : UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let gallery = artGallery, let currentArtist = gallery.artists[indexPath.row] else {
+            print("테이블 데이터 모델 로드 실패!")
+            return
+        }
+        guard let nextVC = storyboard?.instantiateViewController(identifier: "ArtWorkListViewController") as? ArtWorkListViewController else {
+            print("뷰 컨트롤러 인스턴스화 실패")
+            return
+        }
+        nextVC.artist = currentArtist
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 

@@ -16,33 +16,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="495" height="221"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4St-38-vkv">
+                        <rect key="frame" x="123.66666666666667" y="160.33333333333334" width="247.66666666666663" height="20.333333333333343"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iO-7P-Vew">
+                        <rect key="frame" x="123.66666666666667" y="190.66666666666666" width="247.66666666666663" height="20.333333333333343"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hDb-Zb-5IN">
-                        <rect key="frame" x="30" y="21" width="435" height="129.33333333333334"/>
+                        <rect key="frame" x="123.66666666666667" y="21" width="247.66666666666663" height="129.33333333333334"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4St-38-vkv">
-                        <rect key="frame" x="30" y="160.33333333333334" width="435" height="20.333333333333343"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iO-7P-Vew">
-                        <rect key="frame" x="30" y="188" width="435" height="20.333333333333343"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="hDb-Zb-5IN" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="0ym-0q-DA1"/>
                     <constraint firstItem="hDb-Zb-5IN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="3DL-iM-jQg"/>
-                    <constraint firstAttribute="bottom" secondItem="9iO-7P-Vew" secondAttribute="bottom" constant="12.666666666666686" id="7lf-uG-PQ2"/>
-                    <constraint firstItem="9iO-7P-Vew" firstAttribute="top" secondItem="4St-38-vkv" secondAttribute="bottom" constant="7.3333333333333712" id="8yD-8i-9Nv"/>
-                    <constraint firstItem="9iO-7P-Vew" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="C8c-oP-USB"/>
-                    <constraint firstItem="4St-38-vkv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="UWV-Rg-pg2"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="hDb-Zb-5IN" secondAttribute="trailing" constant="10" id="VhD-a3-CFx"/>
+                    <constraint firstItem="hDb-Zb-5IN" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="6zf-cd-GNC"/>
+                    <constraint firstAttribute="bottom" secondItem="9iO-7P-Vew" secondAttribute="bottom" constant="10" id="7lf-uG-PQ2"/>
+                    <constraint firstItem="9iO-7P-Vew" firstAttribute="top" secondItem="4St-38-vkv" secondAttribute="bottom" constant="10" id="8yD-8i-9Nv"/>
+                    <constraint firstItem="9iO-7P-Vew" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="BzC-xM-rVi"/>
                     <constraint firstItem="4St-38-vkv" firstAttribute="top" secondItem="hDb-Zb-5IN" secondAttribute="bottom" constant="10" id="X9f-qP-od7"/>
                     <constraint firstItem="4St-38-vkv" firstAttribute="width" secondItem="hDb-Zb-5IN" secondAttribute="width" id="dTg-wQ-M2t"/>
+                    <constraint firstItem="4St-38-vkv" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="lDq-vo-Smt"/>
                     <constraint firstItem="9iO-7P-Vew" firstAttribute="width" secondItem="4St-38-vkv" secondAttribute="width" id="sRI-34-s8i"/>
-                    <constraint firstItem="hDb-Zb-5IN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="ysw-ln-ctK"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
