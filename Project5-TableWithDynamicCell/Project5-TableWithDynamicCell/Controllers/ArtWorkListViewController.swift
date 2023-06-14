@@ -3,7 +3,7 @@ import UIKit
 
 class ArtWorkListViewController: UIViewController {
 
-    var artist : Artists?
+    var artist : Artists!
     
     @IBOutlet weak var artWorkListTableView: UITableView!
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ extension ArtWorkListViewController : UITableViewDataSource {
         
         cell.workImageView.image = UIImage(named: currentArtWork.image ?? "")
         cell.workNameLabel.text = currentArtWork.title
-        cell.workInfoLabel.text = currentArtWork.info
+        cell.workInfoLabel.text = currentArtWork.isSelected ? currentArtWork.info : "Select For More Info >"
         
         return cell
     }
@@ -54,6 +54,15 @@ extension ArtWorkListViewController : UITableViewDataSource {
 
 extension ArtWorkListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("선택 시 설명 ON/OFF 기능 구현예정")
+        var currentArtWork = artist.works?[indexPath.row]
+        currentArtWork?.isSelected.toggle()
+        artist.works?[indexPath.row] = currentArtWork!
+        let cell = tableView.cellForRow(at: indexPath) as! ArtWorkTableViewCell
+        tableView.beginUpdates()
+        cell.workInfoLabel.text = currentArtWork!.isSelected ? currentArtWork!.info : "Select For More Info >"
+        cell.workInfoLabel.textAlignment = currentArtWork!.isSelected ? .natural : .center
+        tableView.endUpdates()
+        
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 }
