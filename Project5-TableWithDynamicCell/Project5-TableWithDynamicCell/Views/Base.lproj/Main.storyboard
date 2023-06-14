@@ -46,14 +46,29 @@
                     <view key="view" contentMode="scaleToFill" id="Hsv-2Z-YMc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hH9-CP-ETs">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OsO-1e-rOG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OsO-1e-rOG" firstAttribute="trailing" secondItem="hH9-CP-ETs" secondAttribute="trailing" id="8dW-cH-anU"/>
+                            <constraint firstItem="hH9-CP-ETs" firstAttribute="leading" secondItem="OsO-1e-rOG" secondAttribute="leading" id="g3P-cr-Rhn"/>
+                            <constraint firstItem="hH9-CP-ETs" firstAttribute="top" secondItem="OsO-1e-rOG" secondAttribute="top" id="kRg-Ty-HaD"/>
+                            <constraint firstItem="OsO-1e-rOG" firstAttribute="bottom" secondItem="hH9-CP-ETs" secondAttribute="bottom" id="t4H-UJ-F0j"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ArtWorks" id="3f3-gf-WAg"/>
+                    <connections>
+                        <outlet property="artWorkListTableView" destination="hH9-CP-ETs" id="kYR-Fr-6Gh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tcl-8g-fYe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1807" y="-40"/>
+            <point key="canvasLocation" x="1781" y="-35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mZH-QK-BDj">
