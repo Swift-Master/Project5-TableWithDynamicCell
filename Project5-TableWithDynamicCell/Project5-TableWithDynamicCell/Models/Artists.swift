@@ -1,6 +1,6 @@
 import Foundation
 
-struct Artists: Codable {
+class Artists: Codable {
 
   var name  : String?
   var bio   : String?
