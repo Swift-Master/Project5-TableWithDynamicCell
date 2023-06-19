@@ -18,7 +18,7 @@
 - [화면 2 - 설명은 최초 로드시 보이지 않고, 이후 선택할 때마다 펼쳐짐/접힘](https://github.com/AKAPUCH/Project5-TableWithDynamicCell/commit/843737d9bd21ff949d8006044bf20d4991bd93c5)
 
 ### 2023.06.19.
-- 사용자가 손쉬운 사용을 통해 시스템 폰트 변경 시 테이블 레이아웃 변경 반영
+- [사용자가 손쉬운 사용을 통해 시스템 폰트 변경 시 테이블 레이아웃 변경 반영](https://github.com/AKAPUCH/Project5-TableWithDynamicCell/commit/a1f521f86a1c6de9d113ebf7e683c8481a4bd487)
 
 ## 실제 화면
 
