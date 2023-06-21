@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="310" id="BU6-6y-GJG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtistListTableViewCell" rowHeight="310" id="BU6-6y-GJG" customClass="ArtistListTableViewCell" customModule="Project5_TableWithDynamicCell" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="310"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BU6-6y-GJG" id="KJE-JQ-NLu">
@@ -43,7 +43,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="25" id="er8-EO-beF"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -58,11 +58,11 @@
                                                                 <constraint firstItem="tey-T0-TSR" firstAttribute="leading" secondItem="UbC-wr-oep" secondAttribute="leading" id="wGh-rO-VCS"/>
                                                             </constraints>
                                                         </stackView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ArtistBio" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1As-I0-lLQ">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="ArtistBio" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1As-I0-lLQ">
                                                             <rect key="frame" x="186.66666666666663" y="0.0" width="186.33333333333337" height="290"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <color key="textColor" systemColor="labelColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                     </subviews>
@@ -75,6 +75,11 @@
                                                 <constraint firstItem="e1n-oG-HMF" firstAttribute="top" secondItem="KJE-JQ-NLu" secondAttribute="top" constant="10" id="tjf-yQ-Ym4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artistBioTextView" destination="1As-I0-lLQ" id="lMp-GM-8jr"/>
+                                            <outlet property="artistImageView" destination="tey-T0-TSR" id="UgR-zO-ox5"/>
+                                            <outlet property="artistNameLabel" destination="9E1-hj-bqc" id="cOS-Nx-hf8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -89,6 +94,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8e2-Aq-e4z"/>
+                    <connections>
+                        <outlet property="artistListTableView" destination="faJ-j3-gq5" id="4Qc-5F-nJk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

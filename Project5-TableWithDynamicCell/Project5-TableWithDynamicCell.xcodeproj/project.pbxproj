@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		650CAA192A4188FC0045787D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CAA182A4188FC0045787D /* Model.swift */; };
+		650CAA1F2A42C4780045787D /* ArtistListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CAA1E2A42C4780045787D /* ArtistListTableViewCell.swift */; };
 		6E39C5A92A321F4500967990 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E39C5A82A321F4500967990 /* AppDelegate.swift */; };
 		6E39C5AB2A321F4500967990 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E39C5AA2A321F4500967990 /* SceneDelegate.swift */; };
 		6E39C5AD2A321F4500967990 /* ArtistListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E39C5AC2A321F4500967990 /* ArtistListViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		650CAA182A4188FC0045787D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		650CAA1E2A42C4780045787D /* ArtistListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListTableViewCell.swift; sourceTree = "<group>"; };
 		6E39C5A52A321F4500967990 /* Project5-TableWithDynamicCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project5-TableWithDynamicCell.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E39C5A82A321F4500967990 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E39C5AA2A321F4500967990 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				6E39C5AE2A321F4500967990 /* Main.storyboard */,
 				6E39C5B32A321F4600967990 /* LaunchScreen.storyboard */,
+				650CAA1E2A42C4780045787D /* ArtistListTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				6E39C5AD2A321F4500967990 /* ArtistListViewController.swift in Sources */,
 				6E39C5A92A321F4500967990 /* AppDelegate.swift in Sources */,
 				6E39C5AB2A321F4500967990 /* SceneDelegate.swift in Sources */,
+				650CAA1F2A42C4780045787D /* ArtistListTableViewCell.swift in Sources */,
 				650CAA192A4188FC0045787D /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
