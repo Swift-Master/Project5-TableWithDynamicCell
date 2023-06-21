@@ -10,8 +10,9 @@ import UIKit
 class ArtistListViewController: UIViewController {
     
     @IBOutlet weak var artistListTableView: UITableView!
-
+    
     var artists: [Artist]!
+    var works: [Work]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,11 +67,20 @@ extension ArtistListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.artistImageView.image = UIImage(named: artists[indexPath.row].image)
         cell.artistNameLabel.text = artists[indexPath.row].name
         cell.artistBioTextView.text = artists[indexPath.row].bio
+        cell.artistBioTextView.isUserInteractionEnabled = false
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250
+    }
+    
+    // WorkListView 이동
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let workVC = storyboard?.instantiateViewController(withIdentifier: "WorkListViewController") as! WorkListViewController
+        workVC.works = artists[indexPath.row].works
+        navigationController?.pushViewController(workVC, animated: true)
     }
     
 }
