@@ -18,7 +18,7 @@ class ArtistListViewController: UIViewController {
         super.viewDidLoad()
         
         setUI()
-        setConfig()
+        setConfigTableView()
         
         loadArtistData()
     }
@@ -28,9 +28,12 @@ class ArtistListViewController: UIViewController {
         self.title = "Artistry"
     }
     
-    func setConfig() {
+    func setConfigTableView() {
         artistListTableView.dataSource = self
         artistListTableView.delegate = self
+        
+        artistListTableView.rowHeight = UITableView.automaticDimension
+        artistListTableView.estimatedRowHeight = 100
     }
     
     // MARK: - artists.json 데이터 불러오기
@@ -66,19 +69,15 @@ extension ArtistListViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = artistListTableView.dequeueReusableCell(withIdentifier: "ArtistListTableViewCell", for: indexPath) as! ArtistListTableViewCell
         cell.artistImageView.image = UIImage(named: artists[indexPath.row].image)
         cell.artistNameLabel.text = artists[indexPath.row].name
-        cell.artistBioTextView.text = artists[indexPath.row].bio
-        cell.artistBioTextView.isUserInteractionEnabled = false
+        cell.artistBioLabel.text = artists[indexPath.row].bio
         cell.selectionStyle = .none
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
     }
     
     // WorkListView 이동
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let workVC = storyboard?.instantiateViewController(withIdentifier: "WorkListViewController") as! WorkListViewController
+        workVC.artistName = artists[indexPath.row].name
         workVC.works = artists[indexPath.row].works
         navigationController?.pushViewController(workVC, animated: true)
     }

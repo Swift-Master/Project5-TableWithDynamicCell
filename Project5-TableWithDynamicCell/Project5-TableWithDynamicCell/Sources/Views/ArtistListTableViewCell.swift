@@ -11,6 +11,6 @@ class ArtistListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var artistImageView: UIImageView!
     @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var artistBioTextView: UITextView!
-
+    @IBOutlet weak var artistBioLabel: UILabel!
+    
 }

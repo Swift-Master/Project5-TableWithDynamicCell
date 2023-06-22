@@ -11,6 +11,14 @@ class WorkListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var workImageView: UIImageView!
     @IBOutlet weak var workNameLabel: UILabel!
-    @IBOutlet weak var workInfoTextView: UITextView!
-
+    @IBOutlet weak var workInfoLabel: UILabel! {
+        didSet {
+            workInfoLabel.isHidden = true
+        }
+    }
+    @IBOutlet weak var selectInfoLabel: UILabel! {
+        didSet {
+            selectInfoLabel.isHidden = false
+        }
+    }
 }
