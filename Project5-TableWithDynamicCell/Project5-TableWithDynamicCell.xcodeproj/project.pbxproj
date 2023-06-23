@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650CAA192A4188FC0045787D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CAA182A4188FC0045787D /* Model.swift */; };
+		650CAA1F2A42C4780045787D /* ArtistListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CAA1E2A42C4780045787D /* ArtistListTableViewCell.swift */; };
+		650CAA212A42D2C70045787D /* WorkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CAA202A42D2C70045787D /* WorkListViewController.swift */; };
+		650CAA232A42DEB80045787D /* WorkListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CAA222A42DEB80045787D /* WorkListTableViewCell.swift */; };
 		6E39C5A92A321F4500967990 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E39C5A82A321F4500967990 /* AppDelegate.swift */; };
 		6E39C5AB2A321F4500967990 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E39C5AA2A321F4500967990 /* SceneDelegate.swift */; };
-		6E39C5AD2A321F4500967990 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E39C5AC2A321F4500967990 /* ViewController.swift */; };
+		6E39C5AD2A321F4500967990 /* ArtistListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E39C5AC2A321F4500967990 /* ArtistListViewController.swift */; };
 		6E39C5B02A321F4500967990 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E39C5AE2A321F4500967990 /* Main.storyboard */; };
 		6E39C5B22A321F4600967990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E39C5B12A321F4600967990 /* Assets.xcassets */; };
 		6E39C5B52A321F4600967990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E39C5B32A321F4600967990 /* LaunchScreen.storyboard */; };
@@ -17,10 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		650CAA182A4188FC0045787D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		650CAA1E2A42C4780045787D /* ArtistListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListTableViewCell.swift; sourceTree = "<group>"; };
+		650CAA202A42D2C70045787D /* WorkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkListViewController.swift; sourceTree = "<group>"; };
+		650CAA222A42DEB80045787D /* WorkListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkListTableViewCell.swift; sourceTree = "<group>"; };
 		6E39C5A52A321F4500967990 /* Project5-TableWithDynamicCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project5-TableWithDynamicCell.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E39C5A82A321F4500967990 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E39C5AA2A321F4500967990 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6E39C5AC2A321F4500967990 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E39C5AC2A321F4500967990 /* ArtistListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListViewController.swift; sourceTree = "<group>"; };
 		6E39C5AF2A321F4500967990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E39C5B12A321F4600967990 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E39C5B42A321F4600967990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +47,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		659CF22B2A40340100ADB338 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6E39C5B12A321F4600967990 /* Assets.xcassets */,
+				6E39C5BC2A3224F700967990 /* artists.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		659CF22C2A40341E00ADB338 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E39C5AE2A321F4500967990 /* Main.storyboard */,
+				6E39C5B32A321F4600967990 /* LaunchScreen.storyboard */,
+				650CAA1E2A42C4780045787D /* ArtistListTableViewCell.swift */,
+				650CAA222A42DEB80045787D /* WorkListTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		659CF22D2A40342500ADB338 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6E39C5AC2A321F4500967990 /* ArtistListViewController.swift */,
+				650CAA202A42D2C70045787D /* WorkListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		659CF22E2A40342C00ADB338 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				650CAA182A4188FC0045787D /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		659CF22F2A40344400ADB338 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6E39C5AA2A321F4500967990 /* SceneDelegate.swift */,
+				6E39C5A82A321F4500967990 /* AppDelegate.swift */,
+				659CF22E2A40342C00ADB338 /* Models */,
+				659CF22D2A40342500ADB338 /* Controllers */,
+				659CF22C2A40341E00ADB338 /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		659CF2302A40347100ADB338 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6E39C5B62A321F4600967990 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		6E39C59C2A321F4500967990 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +123,9 @@
 		6E39C5A72A321F4500967990 /* Project5-TableWithDynamicCell */ = {
 			isa = PBXGroup;
 			children = (
-				6E39C5BC2A3224F700967990 /* artists.json */,
-				6E39C5A82A321F4500967990 /* AppDelegate.swift */,
-				6E39C5AA2A321F4500967990 /* SceneDelegate.swift */,
-				6E39C5AC2A321F4500967990 /* ViewController.swift */,
-				6E39C5AE2A321F4500967990 /* Main.storyboard */,
-				6E39C5B12A321F4600967990 /* Assets.xcassets */,
-				6E39C5B32A321F4600967990 /* LaunchScreen.storyboard */,
-				6E39C5B62A321F4600967990 /* Info.plist */,
+				659CF2302A40347100ADB338 /* SupportingFiles */,
+				659CF22F2A40344400ADB338 /* Sources */,
+				659CF22B2A40340100ADB338 /* Resources */,
 			);
 			path = "Project5-TableWithDynamicCell";
 			sourceTree = "<group>";
@@ -142,9 +202,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E39C5AD2A321F4500967990 /* ViewController.swift in Sources */,
+				6E39C5AD2A321F4500967990 /* ArtistListViewController.swift in Sources */,
 				6E39C5A92A321F4500967990 /* AppDelegate.swift in Sources */,
 				6E39C5AB2A321F4500967990 /* SceneDelegate.swift in Sources */,
+				650CAA212A42D2C70045787D /* WorkListViewController.swift in Sources */,
+				650CAA1F2A42C4780045787D /* ArtistListTableViewCell.swift in Sources */,
+				650CAA232A42DEB80045787D /* WorkListTableViewCell.swift in Sources */,
+				650CAA192A4188FC0045787D /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,13 +355,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GK6PL55U2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Project5-TableWithDynamicCell/Info.plist";
+				INFOPLIST_FILE = "Project5-TableWithDynamicCell/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,9 +371,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AKAPUCH.Project5-TableWithDynamicCell";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -318,13 +387,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GK6PL55U2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Project5-TableWithDynamicCell/Info.plist";
+				INFOPLIST_FILE = "Project5-TableWithDynamicCell/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,9 +403,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AKAPUCH.Project5-TableWithDynamicCell";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

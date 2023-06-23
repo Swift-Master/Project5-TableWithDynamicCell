@@ -8,48 +8,64 @@
 
 ### 화면 기능
 #### 화가 리스트 화면
-- [ ] 첫 화면으로 설정, 네비게이션 타이틀 표시
-- [ ] 화가 사진, 이름, 설명이 포함된 테이블 뷰 구현
-- [ ] 셀 선택 시 화면 전환 및 선택 셀 정보를 전달
+- [X] 첫 화면으로 설정, 네비게이션 타이틀 표시
+- [X] 화가 사진, 이름, 설명이 포함된 테이블 뷰 구현
+- [X] 셀 선택 시 화면 전환 및 선택 셀 정보를 전달
 
 #### 화가 작품 리스트 화면
-- [ ] 화가 이름을 네비게이션 타이틀로 설정
-- [ ] 작품 그림, 이름, 설명이 포함된 테이블 뷰 구현
-- [ ] 설명은 최초 로드시 보이지 않고, 이후 선택할 때마다 펼쳐짐/접힘 
+- [X] 화가 이름을 네비게이션 타이틀로 설정
+- [X] 작품 그림, 이름, 설명이 포함된 테이블 뷰 구현
+- [X] 설명은 최초 로드시 보이지 않고, 이후 선택할 때마다 펼쳐짐/접힘 
 
 ### 기술 도전 과제
-- [ ] Asset을 사용하지 않고 JSON 파일 로드
-- [ ] 이미지 크기, 설명 길이에 따라 셀의 크기 동적 조절
-- [ ] notification 사용
+- [X] Asset을 사용하지 않고 JSON 파일 로드
+- [X] 이미지 크기, 설명 길이에 따라 셀의 크기 동적 조절
+- [X] notification 사용
 
-## 가이드
+## 구현 과정
 
-영상 가이드는 [코드스쿼드 pr연습](https://www.youtube.com/watch?v=lFinZfu3QO0)을 참조해주세요.
+### [20230619]
+- ArtistListTableView, ArtistListTableViewCell UI 개발
 
-1. 본인 이름으로 브랜치(ex: PAKA)를 생성한 후, 자신의 레포로 fork해주세요.
+### [20230620]
+- JSON Codable 구조체에 담아 불러오기
+  - [Bundle.main.path](https://ios-development.tistory.com/507) 사용
 
-2. fork 한 레포에서 기능 또는 화면 단위로 새 브랜치(ex: pr1)를 생성 후 작업 및 커밋합니다. 
+### [20230621]
+- JSON Data ArtistListTableView 적용
+  - Issue ⭐️
+    ArtistList Cell을 선택하면 다음 화면으로 넘어가야 했는데, bio를 출력하는 TextView의 특성상 텍스트를 편집하고 선택하는 기능이 있어서 이외의 다른 상호작용을 하려면 TextView의 기능을 하지 않도록 하는 코드를 추가해야 한다.
+    ```swift
+    cell.artistBioTextView.isUserInteractionEnabled = false
+    ```
+    레퍼런스 화면에 맞게 텍스트들이 뷰 중간으로 와야해서 현재는 TextView -> Label로 변경한 상태.
+- WorkListTableView, WorkListTableViewCell UI 개발
 
-3. 커밋했던 브랜치(pr1)에서 자신의 이름 브랜치(PAKA)로 PR을 올려주세요.
+### [20230622]
+- TableViewCell 동적 높이 조절
+  1. UITableView의 rowHeight 속성을 automaticDimension으로 설정
+  2. estimatedRowHeight 속성을 예상 높이 값 임의 설정
+  3. didSelectRowAt에서 isHidden 처리를 변경하고 row 새로고침을 한다.
+  - Issue ⭐️
+    row를 새로고침 할 때 `tableView.reloadRow()`를 사용했지만 Cell을 한 번 누를 때는 반응하지 않고 두 번 눌러야 반응하는 현상이 생겼다. 레퍼런스를 참고해서 `beginUpdates()`, `endUpdates()`, `tableView.scrollToRow()`로 변경하여 해결 완료.
 
-4. 코드 리뷰를 받고 모든 수정사항을 반영한 후 `squash and merge` 옵션으로 자신의 브랜치에 merge해주세요.
+### [20230623]
+- Notification 적용
+  - 레퍼런스에서는 기기 설정에서 텍스트 크기를 변경했을 때를 감지해서 bio, workInfo Label Text 크기를 변경하도록 개발되어 있다.
+  - 다른 방식으로 변경해볼까 했는데 신박한 방법이 따로 떠오르지 않아서 레퍼런스대로 진행
+    ```swift
+    // Notification
+    NotificationCenter.default.addObserver(forName: UIContentSizeCategory.didChangeNotification, object: .none, queue: OperationQueue.main) { [weak self] _ in
+		  self?.workListTableView.reloadData()
+    }
 
-5. merge했던 브랜치(pr1)에서 fork한 레포의 main 브랜치로 checkout후 해당 브랜치(pr1)를 삭제합니다.
+    // Label Font 설정
+    cell.workInfoLabel.font = UIFont.preferredFont(forTextStyle: .body)
+    ```
+    해당 Label이 설정에 따라 폰트 크기 및 스타일이 자동 적용 되도록 코드 추가
 
-6. 다음 명령어들을 순차적으로 실행합니다.
+## 구현 화면
+<img src="./TableWithDynamicCell_step1.gif" width="300" />
 
-```
+<img src="./TableWithDynamicCell_step1_Notification.gif" width="300" />
 
-    git remote add upstream https://github.com/Swift-Master/Project1-GoodAsOldPhones
-
-    git fetch upstream `본인의 브랜치명(ex:PAKA)`
-
-    git rebase upstream `upstream/본인의브랜치명(ex:PAKA)`
-
-```
-
-7. 2번으로 돌아가 새로운 작업을 반복합니다.
-
-## 실제 화면
-
-![시뮬레이터화면](./project5.gif)
