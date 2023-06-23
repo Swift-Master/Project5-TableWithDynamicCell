@@ -66,3 +66,6 @@
 
 ## 구현 화면
 <img src="./TableWithDynamicCell_step1.gif" width="300" />
+
+<img src="./TableWithDynamicCell_step1_Notification.gif" width="300" />
+
