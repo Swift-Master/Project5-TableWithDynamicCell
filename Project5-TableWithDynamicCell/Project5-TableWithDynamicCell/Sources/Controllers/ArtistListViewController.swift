@@ -34,6 +34,10 @@ class ArtistListViewController: UIViewController {
         
         artistListTableView.rowHeight = UITableView.automaticDimension
         artistListTableView.estimatedRowHeight = 100
+        
+        NotificationCenter.default.addObserver(forName: UIContentSizeCategory.didChangeNotification, object: .none, queue: OperationQueue.main) { [weak self] _ in
+            self?.artistListTableView.reloadData()
+        }
     }
     
     // MARK: - artists.json 데이터 불러오기
@@ -70,6 +74,7 @@ extension ArtistListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.artistImageView.image = UIImage(named: artists[indexPath.row].image)
         cell.artistNameLabel.text = artists[indexPath.row].name
         cell.artistBioLabel.text = artists[indexPath.row].bio
+        cell.artistBioLabel.font = UIFont.preferredFont(forTextStyle: .body)
         cell.selectionStyle = .none
         return cell
     }

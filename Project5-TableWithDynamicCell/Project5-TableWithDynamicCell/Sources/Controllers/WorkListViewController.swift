@@ -31,6 +31,10 @@ class WorkListViewController: UIViewController {
         
         workListTableView.rowHeight = UITableView.automaticDimension
         workListTableView.estimatedRowHeight = 100
+        
+        NotificationCenter.default.addObserver(forName: UIContentSizeCategory.didChangeNotification, object: .none, queue: OperationQueue.main) { [weak self] _ in
+            self?.workListTableView.reloadData()
+        }
     }
 }
 
@@ -45,6 +49,7 @@ extension WorkListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.workImageView.image = UIImage(named: work.image)
         cell.workNameLabel.text = work.title
         cell.workInfoLabel.text = work.info
+        cell.workInfoLabel.font = UIFont.preferredFont(forTextStyle: .body)
         cell.selectionStyle = .none
         return cell
     }
